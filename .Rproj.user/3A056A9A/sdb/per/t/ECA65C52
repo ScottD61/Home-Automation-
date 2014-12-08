@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1413303806366.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "ECA65C52",
+    "lastKnownWriteTime" : 140552804761601,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "Dry",
+        "contentUrl" : "content?title=Dry&file=0f2dd9cf4284483db16c762114b3f9a0.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 4,
+        "totalObservations" : 3000,
+        "variables" : 4
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

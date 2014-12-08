@@ -1,0 +1,16 @@
+{
+    "contents" : "require(shiny)\n# Load shiny app\nlibrary(shiny)\nshinyui(pageWithSidebar(\n  \n  # Application title\n  headerPanel(\"Histogram of Ratings\")\n  \n  #Sidebar with slider input for number of observations\n  sidebarPanel(\n    selectInput(\"dataset\", \"Choose a dataset:\",\n                )\n    \n    sliderInput(\"obs\",\n                \"Number of observations:\",\n                min = 1,\n                max = 362106,\n                value = 5000)\n    \n    checkboxInput(\"normalization\", \"Show normalization\", FALSE)\n  \n  \n  #Show plot of generated distribution\n  mainPanel(\n    plotOutput(\"\")\n    )\n  \n\n  )\n)\n\n",
+    "created" : 1395355330599.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3862357396",
+    "id" : "61ED643B",
+    "lastKnownWriteTime" : 1387655917,
+    "path" : "~/Marketing/ui.r-recom.R",
+    "project_path" : "ui.r-recom.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

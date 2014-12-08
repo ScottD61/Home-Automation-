@@ -1,0 +1,16 @@
+{
+    "contents" : "# load recommenderlab\nlibrary(\"recommenderlab\")\n# load data \ndata(Jester5k)\n# Data Properties\nJester5k\n# Query registry for recommendation methods \nrecommenderRegistry$get_entries(dataType = \"realRatingMatrix\")\n# Create IBCF Recommender System \nr <- Recommender(Jester5k, method = \"POPULAR\")\n# Describe Recommender\nr\n# Get recommendation systems\nnames(getModel(r))\n# Get top-N model\ngetModel(r)$topN\n# Create top-5 list from POPULAR recommender system for users 1001 and 1002\nrecom <- predict(r, Jester5k[1001:1002,], n=5)\n# Describe recommendations\nrecom\n# Show recommended items\nas(recom, \"list\")       \n# Evaluate recommender  \n# Create evaluation scheme\n# 4-fold cross-validation        \nscheme <- evaluationScheme(Jester5k, method=\"cross\", k=4, given=3, \n                           goodRating=5) \n#Describe scheme\nscheme\n# Evaluate recommender method IBCF\n# Evaluate top-3 list\nresults <- evaluate(scheme, method=\"POPULAR\", n=c(1,3,5,10,15,20)) \n# Display results\nresults\n# View confusion matrix for first fold\ngetConfusionMatrix(results)[[1]] \n# Average results for 4-fold cross-validation\navg(results) \n# ROC curve plot\nplot(results, annotate=TRUE)\n# Precision-recall plot\nplot(results, \"prec/rec\", annotate=TRUE)\n",
+    "created" : 1394828749768.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "423650971",
+    "id" : "1A0953FF",
+    "lastKnownWriteTime" : 1386038710,
+    "path" : "~/Marketing/Popular Recommender System.R",
+    "project_path" : "Popular Recommender System.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

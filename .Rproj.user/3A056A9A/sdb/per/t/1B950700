@@ -1,0 +1,17 @@
+{
+    "contents" : "#Samsung Dishwasher\n#Create Data\n#Set the seed for pseudo randomization\nset.seed(5)\n#Set the range for water temperature\nWatTemp <- c(49:65)\n#Create a normal distribution for water temperature \nWatTemp <- rnorm(3000, mean=57, sd=3)\n#Set the range for hours of operation\nHrs4 <- c(0:1000)\n#Create a normal distribution for hours of operation\nHrs4 <- rnorm(3000, mean=500, sd=225)\n#Set the range for dishwasher capacity\nWashCap <- c(0:14)\n#Create a normal distribution for wash capacity\nWashCap <- rnorm(3000, mean=7, sd=3)\n#Set the range for water supply pressure\nSupPres <- c(20:120)\n#Create a normal distribution for water supply pressure\nSupPres <- rnorm(3000, mean=70, sd=25)\n#Create binary value for nozzle hole being plugged\nNozHosUn <- c(0,1)\n#Set the seed at a repeatable random value\nset.seed(1)\n#Create binary random uniform distribution\nNozHosUn<-sample(NozHosUn,size=3000, replace=TRUE)\n#Create logistic regression\nz=1+2*NozHosUn+3*SupPres+4*PlaceSet+5*Hrs4+6*WatTemp\nz <- (z-mean(z))/sd(z)\npr = 1/(1+exp(-z))\ny <- rbinom(3000,1,pr)\nDishWa=data.frame(y=y, NozHosUn=NozHosUn,SupPres=SupPres,\n                   PlaceSet=PlaceSet,Hrs4=Hrs4,WatTemp=WatTemp)\nglm(y~NozHosUn+SupPres+PlaceSet+Hrs4+WatTemp, data=DishWa, \n    family=binomial)\n#Get summary statistics for dataset\nsummary(DishWa)\n#Save file\nsave(DishWa,file=\"LogitDishWa.Rda\")\n#Create name for y\nnames(DishWa)[1] <- \"Washing Machine Breakdown\"\n#Display variable\nDishWa[1]\n",
+    "created" : 1395026262892.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1425873656",
+    "id" : "1B950700",
+    "lastKnownWriteTime" : 1417995805,
+    "path" : "~/Home Automation/DishWa.R",
+    "project_path" : "DishWa.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

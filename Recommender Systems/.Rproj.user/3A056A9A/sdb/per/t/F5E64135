@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1392596742759.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F5E64135",
+    "lastKnownWriteTime" : 140669908856320,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "error",
+        "contentUrl" : "content?title=error&file=002ff7f9d13049b59839f06155c88c22.htm",
+        "displayedObservations" : "1",
+        "displayedVariables" : 4,
+        "totalObservations" : "1",
+        "variables" : "3"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

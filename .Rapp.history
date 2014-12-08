@@ -1,0 +1,3 @@
+load("/Users/scdavis6/Home Automation/DataVersion1.RData")
+load("/Users/scdavis6/Home Automation/LogitDry.Rda")
+load("/Users/scdavis6/Home Automation/LogitDry.R")

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1413303786164.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4CE5FFE0",
+    "lastKnownWriteTime" : 3345734069945106433,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "DishWa",
+        "contentUrl" : "content?title=DishWa&file=dcdde8df627145e78f5d55d8b619429f.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 6,
+        "totalObservations" : 3000,
+        "variables" : 6
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
