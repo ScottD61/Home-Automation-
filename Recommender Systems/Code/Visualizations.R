@@ -1,3 +1,4 @@
+#Summary statistics of Jester5k dataset
 # Load recommenderlab
 library(recommenderlab) 
 # Load visualization app
