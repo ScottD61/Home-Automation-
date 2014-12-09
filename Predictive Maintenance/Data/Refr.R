@@ -9,7 +9,7 @@ OpTemp1 <- rnorm(3000, mean = 27.5, sd = 3)
 #Create a normal distribution for hours of operation
 Hrs2 <- rnorm(3000, mean = 4383, sd = 1100)
 #Set the range for refrigerator capacity between 0-31 cubic feet
-#Create a normal distribution for wash capacity
+#Create a normal distribution for refrigerator capacity
 RefCap <- rnorm(3000, mean = 16, sd = 4)
 #Create binary value for five binary variables
 BiVar <- c(0,1)
@@ -30,19 +30,20 @@ Therm <- sample(BiVar, size = 3000, replace = TRUE)
 #Create logistic regression - 8 var
 z = 1 + 2*OpTemp1 + 3*Hrs2 + 4*RefCap + 5*DefCom + 
   6*DeCoil + 7*BFan + 8*BDef + 9*Therm
-z <- (z-mean(z))/sd(z)
-pr = 1/(1 + exp(-z))
+z1 <- (z-mean(z))/sd(z)
+pr = 1/(1 + exp(-z1))
 y <- rbinom(3000, 1, pr)
 #Get coefficients of regression
-DishWa = data.frame(y = y, NozHosUn = NozHosUn, SupPres = SupPres,
-                    PlaceSet = PlaceSet, Hrs4 = Hrs4, WatTemp = WatTemp)
-glm(y~NozHosUn + SupPres + PlaceSet + Hrs4 + WatTemp, data = DishWa, 
-    family = binomial)
+Refr = data.frame(y = y, OpTemp1 = OpTemp1, RefCap = RefCap,
+                    DefCom = DefCom, Hrs2 = Hrs2, DeCoil = DeCoil,
+                    BFan = BFan, BDef = BDef, Therm = Therm)
+glm(y ~ OpTemp1 + RefCap + DefCom + Hrs2 + DeCoil + BFan + BDef + Therm,
+      data = Refr, family = binomial)
 #Get summary statistics for dataset
-summary(DishWa)
+summary(Refr)
 #Save file
-save(DishWa,file="LogitDishWa.Rda")
+save(Refr, file = "LogitRefr.Rda")
 #Create name for y
-names(DishWa)[1] <- "Washing Machine Breakdown"
+names(Refr)[1] <- "Refrigerator Breakdown"
 #Display variable
-DishWa[1]
+Refr[1]

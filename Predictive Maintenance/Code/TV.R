@@ -12,8 +12,8 @@ Hrs3 <- rnorm(3000, mean = 1250, sd = 320)
 #Create a normal distribution for humidity in percentage
 Hum1 <- rnorm(3000, mean = 50, sd = 10)
 #Create logistic regression
-z = 1 + 2*OpTemp + 3*Hrs3 + 4*Hum1 
-z <- (z-mean(z))/sd(z)
+z1 = 1 + 2*OpTemp + 3*Hrs3 + 4*Hum1 
+z <- (z-mean(z))/sd(z1)
 pr = 1/(1 + exp(-z))
 y <- rbinom(3000, 1, pr)
 #Get coefficients of regression
@@ -22,8 +22,8 @@ glm(y ~ OpTemp + Hum1 + Hrs4, data = TV, family = binomial)
 #Get summary statistics for dataset
 summary(TV)
 #Save file
-save(TV, file = "LogitDishWa.Rda")
+save(TV, file = "LogitTV.Rda")
 #Create name for y
-names(TV)[1] <- "Washing Machine Breakdown"
+names(TV)[1] <- "TV Breakdown"
 #Display variable
 TV[1]
