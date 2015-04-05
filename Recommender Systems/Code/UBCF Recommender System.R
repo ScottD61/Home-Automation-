@@ -7,7 +7,7 @@ data(Jester5k)
 Jester5k
 # Query registry for recommendation methods 
 recommenderRegistry$get_entries(dataType = "realRatingMatrix")
-# Create IBCF Recommender System 
+# Create UBCF Recommender System 
 r <- Recommender(Jester5k, method = "UBCF")
 # Describe Recommender
 r
